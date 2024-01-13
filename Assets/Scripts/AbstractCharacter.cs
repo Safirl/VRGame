@@ -8,6 +8,17 @@ public class AbstractCharacter : MonoBehaviour
     [SerializeField] protected float speed;
     protected float damage;
 
+    //Getter and Setter
+
+    public float GetLives()
+    {
+        return lives;
+    }
+    public float GetSpeed()
+    {
+        return speed;
+    }
+
 
     // Start is called before the first frame update
     void Start()
