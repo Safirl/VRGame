@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class AbstractCharacter : MonoBehaviour
 {
-    [SerializeField] float lives;
+    [SerializeField] protected float lives;
     [SerializeField] protected float speed;
-    protected float damage;
+    [SerializeField] protected float damage;
 
     //Getter and Setter
 
