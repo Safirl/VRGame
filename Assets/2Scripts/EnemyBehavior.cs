@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEditor.Experimental.GraphView;
+using UnityEditor.UI;
 using UnityEngine;
 
 public class EnemyBehavior : AbstractCharacter
@@ -31,11 +32,17 @@ public class EnemyBehavior : AbstractCharacter
     }
 
     
-    private void Hit(GameObject objectHit, bool isPlayer)
+    protected void Hit(GameObject objectHit, bool isPlayer)
     {
         if (!isPlayer)
             objectHit.GetComponent<MachineBehavior>().IsDamaged(damage);
         else
             objectHit.GetComponent<PlayerBehavior>().IsDamaged(damage);
     }
+
+    public void TakeObject(GameObject objectSelected)
+    {
+        objectSelected.GetComponent<ObjectBehavior>().SetPossesedCharacter(gameObject);
+    }
+
 }
